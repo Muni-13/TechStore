@@ -163,7 +163,40 @@ const products = [
     image: "https://i5.walmartimages.com/seo/Anker-24000mAh-Power-Bank-PowerCore-24K-3-Port-Portable-Charger-Fast-Charging-140W-Output-Smart-Digital-Display_4dbba0de-e70d-47e3-b549-cae789e6df91.58febb4e7e62b70c0852e011caee453b.jpeg",
     isBestSeller: false,
     brand: "Anker"
-  }
+  },
+  {
+  id: 16,
+  name: "Dell XPS 15, Intel Core i7, 16GB RAM, 512GB SSD",
+  price: 124999,
+  originalPrice: 139999,
+  discount: "11% OFF",
+  rating: 4.7,
+  image: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6",
+  isBestSeller: true,
+  brand: "Dell"
+},
+{
+  id: 17,
+  name: "HP Spectre x360 14, Intel Core Ultra 7, 16GB RAM, 1TB SSD",
+  price: 119999,
+  originalPrice: 134999,
+  discount: "11% OFF",
+  rating: 4.8,
+  image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+  isBestSeller: false,
+  brand: "HP"
+},
+{
+  id: 18,
+  name: "Lenovo ThinkPad X1 Carbon, Intel Core Ultra 7, 16GB RAM, 512GB SSD",
+  price: 129999,
+  originalPrice: 144999,
+  discount: "10% OFF",
+  rating: 4.8,
+  image: "https://images.unsplash.com/photo-1484788984921-03950022c9ef",
+  isBestSeller: true,
+  brand: "Lenovo"
+}
 ];
 
 export default products;
