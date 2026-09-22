@@ -1,7 +1,7 @@
 import ProductCard from "./components/ProductCard";
 import "./App.css";
 import products from "./components/data.js"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import techstoreLogo from "./assets/techstore.png";
 
 
@@ -9,9 +9,38 @@ function App() {
 
     const allBrands = [...new Set(products.map(p=>p.brand))];
     //cart item-array of product in card
-    const [cartItems,setCartItems] = useState([]);
+    const [cartItems,setCartItems] = useState(()=>{
+      const cart = localStorage.getItem("techCard");
+      if(cart){
+        try {
+          return JSON.parse(cart);
+        } catch (error) {
+          console.error("Proble!!",error);
+          return [];
+        }
+      }else{
+        return [];
+      }
+
+      
+    });
+
+    useEffect(()=>{
+      localStorage.setItem("techCard",JSON.stringify(cartItems))
+    },[cartItems])
     //wishlist -array of prducts Ids that  are wishlisted
-    const [wishList,setWishList] = useState([]);
+    const [wishList,setWishList] = useState(()=>{
+      const wish = localStorage.getItem("techWish");
+      if(wish){
+        return JSON.parse(wish);
+      }else{
+        return [];
+      }
+    });
+
+    useEffect(()=>{
+      localStorage.setItem("techWish",JSON.stringify(wishList))
+    },[wishList])
     //search-what are user types in serach box
     const [SearchTerm,setSearchTerm] = useState("");
     //brand filter -which brand is selected(All- means show all)
